@@ -19,7 +19,8 @@ function App() {
   const [data, setdata] = useState<Data>();
   //&pageNo=1&numOfRows=10&startCreateDt=20200310&endCreateDt=20200315
   useEffect(() => {
-  axios.get(`api&startCreateDt=20200310&endCreateDt=20200325`)
+  // axios.get(`api&startCreateDt=20200310&endCreateDt=20200325`)
+  axios.get(`https://covie19-viewer.herokuapp.com/http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson?serviceKey=ZaPUTS2Fj0BUcvXIXTJxWWMI18uWdSPdMkk%2BsMIGA1D%2FhtaTwTvZq2CJ5dgSj5OJH7djKxNMKp2Z7Q1rnIDBjg%3D%3D&pageNo=1&numOfRows=10&startCreateDt=20200310&endCreateDt=20210325`)
   .then(response => {
     console.log(response);
     setdata(response.data.response.body.items);
